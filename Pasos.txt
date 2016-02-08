@@ -1,0 +1,20 @@
+Verificador de tarjeta de crédito con React
+
+1. Creamos el render del verificador de tarjetas de crédito y le asignamos valores vacíos
+
+  En este caso let {type, text} = this.process(...) toma los valores de la función process
+  la cual retornaba un arreglo vacío.
+
+2. El input cuando cambie (onChange) ejecutará la función (handleChange)
+
+3. La función handleChange toma el valor del input, checa que no se estén escribiendo
+  espacios con la función (filterWhitespace), y coloca en el state number, el valor del
+  input.
+
+4. al reenderizarse el componente, ejecuta la función process donde esta verifica que tipo
+  de tarjeta es el número ingresado (checkType) y agrega los espacios en blanco cada
+  cuatro caracteres (insertSpaces).
+
+5. Con checkType podemos verificar que tipo de tarjeta es el número ingresado, a través
+  de las regex enviadas en la variable types, en el lugar donde se está declarando la clase
+  del componente. 
