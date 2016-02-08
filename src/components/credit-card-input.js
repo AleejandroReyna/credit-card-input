@@ -20,8 +20,20 @@ export default class CardCredit extends Component {
     };
   }
 
+  filterLimit(text) {
+    if (text.length > 16) {
+      text = text.slice(0, 16);
+    }
+
+    return text;
+  }
+
   filterWhitespace(text) {
     return text.replace(/\s/g, '');
+  }
+
+  filterLetters(text) {
+    return text.replace(/[a-zA-Z]/, '')
   }
 
   insertSpaces(text) {
@@ -41,6 +53,8 @@ export default class CardCredit extends Component {
   handleChange(e) {
     let newValue = e.target.value;
     let newNumber = this.filterWhitespace(newValue);
+    newNumber = this.filterLetters(newNumber);
+    newNumber = this.filterLimit(newNumber);
     this.setState({number: newNumber});
   }
 

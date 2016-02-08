@@ -17,4 +17,9 @@ Verificador de tarjeta de crédito con React
 
 5. Con checkType podemos verificar que tipo de tarjeta es el número ingresado, a través
   de las regex enviadas en la variable types, en el lugar donde se está declarando la clase
-  del componente. 
+  del componente.
+
+6. Con checkLetter verificamos si no se están escribiendo letras a través de regex.
+
+7. Con filterLimit limitamos la escritura de caracteres en 16, para no ingresar una targeta
+  no válida.
